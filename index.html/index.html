@@ -2,43 +2,71 @@
 <html>
 <head>
 <title>Para Itzel 💖</title>
+
 <style>
-body {
-    background: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: red;
-    font-family: monospace;
-    overflow: hidden;
+body{
+    background:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    margin:0;
+    overflow:hidden;
+    font-family:monospace;
 }
 
-.heart {
-    white-space: pre;
-    font-size: 12px;
-    animation: beat 1s infinite;
+.heart{
+    white-space:pre;
+    color:#ff1a1a;
+    font-size:12px;
+    animation:beat 1s infinite;
+    text-align:center;
 }
 
-@keyframes beat {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
+@keyframes beat{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.2);}
+    100%{transform:scale(1);}
 }
 </style>
 </head>
+
 <body>
 
-<div class="heart">
-❤️❤️❤️      ❤️❤️❤️  
-❤️❤️❤️❤️  ❤️❤️❤️❤️  
-❤️❤️❤️❤️❤️❤️❤️❤️❤️  
- ❤️❤️❤️❤️❤️❤️❤️❤️  
-  ❤️❤️❤️❤️❤️❤️  
-   ❤️❤️❤️❤️  
-    ❤️❤️  
-     ❤️  
-</div>
+<div class="heart" id="heart"></div>
+
+<script>
+function createHeart(name){
+let pattern = `
+  @@@     @@@  
+ @@@@@   @@@@@ 
+@@@@@@@ @@@@@@@
+@@@@@@@@@@@@@@@@
+ @@@@@@@@@@@@@@
+  @@@@@@@@@@@@
+    @@@@@@@@@
+      @@@@@
+        @@@
+         @
+`;
+
+let result = "";
+let i = 0;
+
+for(let char of pattern){
+    if(char === "@"){
+        result += name[i % name.length];
+        i++;
+    } else {
+        result += char;
+    }
+}
+
+return result;
+}
+
+document.getElementById("heart").textContent = createHeart("ITZEL");
+</script>
 
 </body>
 </html>
