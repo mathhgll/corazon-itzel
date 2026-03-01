@@ -11,67 +11,41 @@ body{
     align-items:center;
     height:100vh;
     margin:0;
-    overflow:hidden;
-    font-family: 'Courier New', monospace;
+    font-family: monospace;
 }
 
 .heart{
     white-space: pre;
-    color:#ff1a1a;
-    font-size:18px;
-    line-height:18px;
-    animation:beat 1s infinite;
+    color: #ff1a1a;
+    font-size: 14px;
+    line-height: 14px;
     text-align:center;
+    animation: beat 1s infinite;
 }
 
 @keyframes beat{
-    0%{transform:scale(1);}
-    50%{transform:scale(1.15);}
-    100%{transform:scale(1);}
+    0%{transform: scale(1);}
+    50%{transform: scale(1.2);}
+    100%{transform: scale(1);}
 }
 </style>
 </head>
 
 <body>
 
-<div class="heart" id="heart"></div>
-
-<script>
-function createHeart(name){
-let pattern = `
-        @@@@@@        @@@@@@
-      @@@@@@@@@@    @@@@@@@@@@
-    @@@@@@@@@@@@@@  @@@@@@@@@@@@@@
-   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-      @@@@@@@@@@@@@@@@@@@@@@@@@@@
-        @@@@@@@@@@@@@@@@@@@@@@@
-          @@@@@@@@@@@@@@@@@@@
-            @@@@@@@@@@@@@@@
-              @@@@@@@@@@@
-                @@@@@@@
-                  @@@
-                   @
-`;
-
-let result = "";
-let i = 0;
-
-for(let char of pattern){
-    if(char === "@"){
-        result += name[i % name.length];
-        i++;
-    } else {
-        result += char;
-    }
-}
-
-return result;
-}
-
-document.getElementById("heart").textContent = createHeart("ITZEL");
-</script>
+<div class="heart">
+        ITZEL      ITZEL
+     ITZELITZEL  ITZELITZEL
+   ITZELITZELITZELITZELITZEL
+  ITZELITZELITZELITZELITZELITZEL
+   ITZELITZELITZELITZELITZEL
+     ITZELITZELITZELITZEL
+       ITZELITZELITZEL
+         ITZELITZEL
+           ITZEL
+            ITZ
+             I
+</div>
 
 </body>
 </html>
