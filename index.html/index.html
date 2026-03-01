@@ -12,20 +12,21 @@ body{
     height:100vh;
     margin:0;
     overflow:hidden;
-    font-family:monospace;
+    font-family: 'Courier New', monospace;
 }
 
 .heart{
-    white-space:pre;
+    white-space: pre;
     color:#ff1a1a;
-    font-size:12px;
+    font-size:18px;
+    line-height:18px;
     animation:beat 1s infinite;
     text-align:center;
 }
 
 @keyframes beat{
     0%{transform:scale(1);}
-    50%{transform:scale(1.2);}
+    50%{transform:scale(1.15);}
     100%{transform:scale(1);}
 }
 </style>
@@ -38,16 +39,20 @@ body{
 <script>
 function createHeart(name){
 let pattern = `
-  @@@     @@@  
- @@@@@   @@@@@ 
-@@@@@@@ @@@@@@@
-@@@@@@@@@@@@@@@@
- @@@@@@@@@@@@@@
-  @@@@@@@@@@@@
-    @@@@@@@@@
-      @@@@@
-        @@@
-         @
+        @@@@@@        @@@@@@
+      @@@@@@@@@@    @@@@@@@@@@
+    @@@@@@@@@@@@@@  @@@@@@@@@@@@@@
+   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+      @@@@@@@@@@@@@@@@@@@@@@@@@@@
+        @@@@@@@@@@@@@@@@@@@@@@@
+          @@@@@@@@@@@@@@@@@@@
+            @@@@@@@@@@@@@@@
+              @@@@@@@@@@@
+                @@@@@@@
+                  @@@
+                   @
 `;
 
 let result = "";
